@@ -39,15 +39,18 @@ def module_main(received_data: any) -> [any, str]:
 
         # detect frequencies and magnitudes
         freq_data = rfft(superposed_waveform)
-        x_frequency = np.linspace(0.0, PARAMS["SAMPLE_SIZE"]/2, int(len(superposed_waveform)/2))
-        y_amplitude = 2/len(superposed_waveform) * np.abs(freq_data[0:int(len(superposed_waveform)/2)])
+        x_frequency = np.linspace(0.0, PARAMS["SAMPLE_SIZE"] / 2, int(len(superposed_waveform) / 2))
+        y_amplitude = 2 / len(superposed_waveform) * np.abs(freq_data[0:int(len(superposed_waveform) / 2)])
         peaks_index, properties = find_peaks(y_amplitude, prominence=1, width=0)
 
         # construct output data
-        processed_data = {}
+        processed_data = []
         for i in range(len(peaks_index)):
-            processed_data[f"frequency-{i}"] = x_frequency[peaks_index[i]]
-            processed_data[f"magnitude-{i}"] = properties['prominences'][i]
+
+            peaks = {'frequency': x_frequency[peaks_index[i]], 'magnitude': properties['prominences'][i]}
+            # processed_data[f"frequency-{i}"] = x_frequency[peaks_index[i]]
+            # processed_data[f"magnitude-{i}"] = properties['prominences'][i]
+            processed_data.append(peaks)
 
         return processed_data, None
 
