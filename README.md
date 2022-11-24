@@ -1,11 +1,11 @@
 # Fast Fourier Transform
 
-|                |                                       |
-| -------------- | ------------------------------------- |
-| Name           | Fast Fourier Transform                        |
-| Version        | v1.0.0                                |
+|           |                                                                                                     |
+| --------- | --------------------------------------------------------------------------------------------------- |
+| Name      | Fast Fourier Transform                                                                              |
+| Version   | v1.0.0                                                                                              |
 | DockerHub | [weevenetwork/fast-fourier-transform](https://hub.docker.com/r/weevenetwork/fast-fourier-transform) |
-| Authors        | Jakub Grzelak                  |
+| Authors   | Jakub Grzelak                                                                                       |
 
 - [Fast Fourier Transform](#fast-fourier-transform)
   - [Description](#description)
@@ -26,11 +26,10 @@ Extract elementary frequencies and magnitudes from your data.
 
 The following module configurations can be provided in a data service designer section on weeve platform:
 
-| Name                 | Environment Variables     | type     | Description                                              |
-| -------------------- | ------------------------- | -------- | -------------------------------------------------------- |
-| Input Label    | INPUT_LABEL         | string   | Label of data to apply FFT to.     |
-| Sample Data    | SAMPLE_SIZE         | string   | Number of samples taken per second, sample rate of 1024 means that 1024 values of the signal are recorded in one second.    |
-
+| Name        | Environment Variables | type   | Description                                                                                                              |
+| ----------- | --------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Input Label | INPUT_LABEL           | string | Label of data to apply FFT to.                                                                                           |
+| Sample Data | SAMPLE_SIZE           | string | Number of samples taken per second, sample rate of 1024 means that 1024 values of the signal are recorded in one second. |
 
 ### Set by the weeve Agent on the edge-node
 
@@ -39,8 +38,8 @@ Other features required for establishing the inter-container communication betwe
 | Environment Variables | type   | Description                                    |
 | --------------------- | ------ | ---------------------------------------------- |
 | MODULE_NAME           | string | Name of the module                             |
-| MODULE_TYPE           | string | Type of the module (Input, Processing, Output)  |
-| EGRESS_URLS            | string | HTTP ReST endpoints for the next module         |
+| MODULE_TYPE           | string | Type of the module (Input, Processing, Output) |
+| EGRESS_URLS           | string | HTTP ReST endpoints for the next module        |
 | INGRESS_HOST          | string | Host to which data will be received            |
 | INGRESS_PORT          | string | Port to which data will be received            |
 
@@ -59,15 +58,17 @@ Input to this module is a single JSON object with is bytes object containing com
 
 ## Output
 
-Output of this module is detected base frequencies and magitudes:
-
-* JSON body single object, example:
+Output of this module is list of the detected frequencies and magitudes, formatted as a list of objects;
 
 ```json
-{
-    "frequency-1": 270,
-    "magnitude-1": 2,
-    "frequency-2": 60,
-    "magnitude-2": 25,
-}
+[
+    {
+        "frequency": 270,
+        "magnitude": 2
+    },
+    {
+        "frequency": 60,
+        "magnitude": 25
+    }
+]
 ```

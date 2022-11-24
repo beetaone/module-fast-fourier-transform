@@ -48,8 +48,6 @@ def module_main(received_data: any) -> [any, str]:
         for i in range(len(peaks_index)):
 
             peaks = {'frequency': x_frequency[peaks_index[i]], 'magnitude': properties['prominences'][i]}
-            # processed_data[f"frequency-{i}"] = x_frequency[peaks_index[i]]
-            # processed_data[f"magnitude-{i}"] = properties['prominences'][i]
             processed_data.append(peaks)
 
         return processed_data, None
