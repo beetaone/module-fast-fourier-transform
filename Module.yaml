@@ -1,14 +1,14 @@
 displayName: 'Fast Fourier Transform'
 moduleName: 'fast-fourier-transform'
 description: 'Get elementary frequencies and magnitudes of your data.'
-versionName: 'v1.0.0'
+versionName: 'v1.0.1'
 isPublic: true
 categories:
   - 'Experimental'
 type: 'Processing'
 image:
   name: 'weevenetwork/fast-fourier-transform'
-  tag: 'v1.0.0'
+  tag: 'v1.0.1'
   homepage: 'https://hub.docker.com/r/weevenetwork/fast-fourier-transform'
 repository: 'https://github.com/weeve-modules/fast-fourier-transform'
 envs:

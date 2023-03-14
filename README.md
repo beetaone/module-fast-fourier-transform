@@ -3,7 +3,7 @@
 |           |                                                                                                     |
 | --------- | --------------------------------------------------------------------------------------------------- |
 | Name      | Fast Fourier Transform                                                                              |
-| Version   | v1.0.0                                                                                              |
+| Version   | v1.0.1                                                                                              |
 | DockerHub | [weevenetwork/fast-fourier-transform](https://hub.docker.com/r/weevenetwork/fast-fourier-transform) |
 | Authors   | Jakub Grzelak                                                                                       |
 
