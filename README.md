@@ -4,14 +4,14 @@
 | --------- | --------------------------------------------------------------------------------------------------- |
 | Name      | Fast Fourier Transform                                                                              |
 | Version   | v1.0.1                                                                                              |
-| DockerHub | [weevenetwork/fast-fourier-transform](https://hub.docker.com/r/weevenetwork/fast-fourier-transform) |
+| DockerHub | [beetaone/fast-fourier-transform](https://hub.docker.com/r/beetaone/fast-fourier-transform) |
 | Authors   | Jakub Grzelak                                                                                       |
 
 - [Fast Fourier Transform](#fast-fourier-transform)
   - [Description](#description)
   - [Environment Variables](#environment-variables)
     - [Module Specific](#module-specific)
-    - [Set by the weeve Agent on the edge-node](#set-by-the-weeve-agent-on-the-edge-node)
+    - [Set by the beetaone Agent on the edge-node](#set-by-the-beetaone-agent-on-the-edge-node)
   - [Dependencies](#dependencies)
   - [Input](#input)
   - [Output](#output)
@@ -24,16 +24,16 @@ Extract elementary frequencies and magnitudes from your data.
 
 ### Module Specific
 
-The following module configurations can be provided in a data service designer section on weeve platform:
+The following module configurations can be provided in a data service designer section on beetaone platform:
 
 | Name        | Environment Variables | type   | Description                                                                                                              |
 | ----------- | --------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------ |
 | Input Label | INPUT_LABEL           | string | Label of data to apply FFT to.                                                                                           |
 | Sample Data | SAMPLE_SIZE           | string | Number of samples taken per second, sample rate of 1024 means that 1024 values of the signal are recorded in one second. |
 
-### Set by the weeve Agent on the edge-node
+### Set by the beetaone Agent on the edge-node
 
-Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
+Other features required for establishing the inter-container communication between modules in a data service are set by beetaone agent.
 
 | Environment Variables | type   | Description                                    |
 | --------------------- | ------ | ---------------------------------------------- |
